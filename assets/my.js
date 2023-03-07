@@ -1,31 +1,31 @@
 // app.js
   
 // Complete logic of game inside this function
-const game = () => {
+var game = () => {
     let playerScore = 0;
     let computerScore = 0;
     let moves = 0;
   
   
     // Function to 
-    const playGame = () => {
-        const rockBtn = document.querySelector('.rock');
-        const paperBtn = document.querySelector('.paper');
-        const scissorBtn = document.querySelector('.scissor');
-        const playerOptions = [rockBtn,paperBtn,scissorBtn];
-        const computerOptions = ['rock','paper','scissors']
+    var playGame = () => {
+        var rockBtn = document.querySelector('.rock');
+        var paperBtn = document.querySelector('.paper');
+        var scissorBtn = document.querySelector('.scissor');
+        var playerOptions = [rockBtn,paperBtn,scissorBtn];
+        var computerOptions = ['rock','paper','scissors']
           
         // Function to start playing game
         playerOptions.forEach(option => {
             option.addEventListener('click',function(){
   
-                const movesLeft = document.querySelector('.movesleft');
+                var movesLeft = document.querySelector('.movesleft');
                 moves++;
                 movesLeft.innerText = `Moves Left: ${10-moves}`;
                   
   
-                const choiceNumber = Math.floor(Math.random()*3);
-                const computerChoice = computerOptions[choiceNumber];
+                var choiceNumber = Math.floor(Math.random()*3);
+                var computerChoice = computerOptions[choiceNumber];
   
                 // Function to check who wins
                 winner(this.innerText,computerChoice)
@@ -40,10 +40,10 @@ const game = () => {
     }
   
     // Function to decide winner
-    const winner = (player,computer) => {
-        const result = document.querySelector('.result');
-        const playerScoreBoard = document.querySelector('.p-count');
-        const computerScoreBoard = document.querySelector('.c-count');
+    var winner = (player,computer) => {
+        var result = document.querySelector('.result');
+        var playerScoreBoard = document.querySelector('.p-count');
+        var computerScoreBoard = document.querySelector('.c-count');
         player = player.toLowerCase();
         computer = computer.toLowerCase();
         if(player === computer){
@@ -86,11 +86,11 @@ const game = () => {
     }
   
     // Function to run when game is over
-    const gameOver = (playerOptions,movesLeft) => {
+    var gameOver = (playerOptions,movesLeft) => {
   
-        const chooseMove = document.querySelector('.move');
-        const result = document.querySelector('.result');
-        const reloadBtn = document.querySelector('.reload');
+        var chooseMove = document.querySelector('.move');
+        var result = document.querySelector('.result');
+        var reloadBtn = document.querySelector('.reload');
   
         playerOptions.forEach(option => {
             option.style.display = 'none';
